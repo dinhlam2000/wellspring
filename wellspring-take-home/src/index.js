@@ -1,13 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// Components
+import App from './App';
+import HomePage from './page/HomePage';
+import PatientPage from './page/PatientPage';
+import ErrorPage from './page/ErrorPage';
+
+// Append to add more pages
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+       {
+        path: "/patients",
+        element: <PatientPage />,
+      },
+    ],
+  },
+]); 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 

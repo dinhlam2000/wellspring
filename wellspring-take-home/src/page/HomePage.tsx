@@ -1,5 +1,5 @@
 import { Divider, Paper, Box, Typography } from "@mui/material";
-
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 
 // Components
@@ -28,11 +28,11 @@ function HomePage() {
             <Typography variant="h5" sx={{ display: "inline-block" }}>
               Recent Patients
             </Typography>
-            <Box onClick={() => {}}>
+            <Link to="/patients">
               <Typography variant="subtitle2" sx={{ display: "inline-block" }}>
                 View all
               </Typography>
-            </Box>
+            </Link>
           </Box>
           <Divider color="#E0F2FE" sx={{ height: 2 }} />
           <Box sx={{ maxHeight: "60vh", overflowY: "scroll" }}>

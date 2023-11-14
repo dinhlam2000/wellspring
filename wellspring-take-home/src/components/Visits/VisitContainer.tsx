@@ -22,7 +22,6 @@ function VisitContainer() {
   const [tabValue, setTabValue] = useState<TabValue>(TabValue.Today);
 
   const filteredAppointments = appointments.filter((appointment) => {
-    // console.log("appointment", appointment);
     if (tabValue === TabValue.Today) {
       return isToday(
         parse(
@@ -51,9 +50,6 @@ function VisitContainer() {
       );
     }
   });
-
-  console.log("tabValue", tabValue);
-  console.log("filtered,", filteredAppointments);
 
   const handleChange = (event: React.SyntheticEvent, newValue: TabValue) => {
     setTabValue(newValue);

@@ -14,22 +14,11 @@ import Container from "@mui/material/Container";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { mainListItems } from "./listItems";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./page/HomePage";
-import PatientPage from "./page/PatientPage";
+import { Outlet } from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/patients",
-    element: <PatientPage />,
-  },
-]);
+// Components
+import NavBar from "./components/Navigations/NavBar";
 
 const drawerWidth: number = 240;
 
@@ -207,7 +196,9 @@ export default function App() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">{mainListItems}</List>
+          <List component="nav">
+            <NavBar />
+          </List>
         </Drawer>
         <Box
           component="main"
@@ -222,7 +213,9 @@ export default function App() {
           }}
         >
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4, marginTop: "100px" }}>
-            <RouterProvider router={router} />
+            <div id="details">
+              <Outlet></Outlet>
+            </div>
           </Container>
         </Box>
       </Box>
