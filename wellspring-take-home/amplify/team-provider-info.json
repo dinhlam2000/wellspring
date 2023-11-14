@@ -17,6 +17,9 @@
           "appId": "d3jjlg6ekb7hcc",
           "type": "manual"
         }
+      },
+      "auth": {
+        "wellspringa6fdac99": {}
       }
     }
   }

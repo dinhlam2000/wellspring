@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
@@ -19,6 +19,15 @@ import { Outlet } from "react-router-dom";
 
 // Components
 import NavBar from "./components/Navigations/NavBar";
+
+// Auth
+import { Amplify } from "aws-amplify";
+import type { WithAuthenticatorProps } from "@aws-amplify/ui-react";
+import { withAuthenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
+
+import awsconfig from "./aws-exports";
+Amplify.configure(awsconfig);
 
 const drawerWidth: number = 240;
 
@@ -130,7 +139,7 @@ const defaultTheme = createTheme({
   },
 });
 
-export default function App() {
+function App({ signOut, user }: WithAuthenticatorProps) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -165,13 +174,15 @@ export default function App() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Welcome to my project -- Lam Tran
+              Welcome to this project -- {user?.username}
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            <h1>Hello {user?.username}</h1>
+            <button onClick={signOut}>Sign out</button>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -222,3 +233,5 @@ export default function App() {
     </ThemeProvider>
   );
 }
+
+export default withAuthenticator(App);

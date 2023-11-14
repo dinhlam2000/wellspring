@@ -9,8 +9,9 @@
     "resolveJsonModule": true,
     "declaration": true,
     "outDir": "./dist",
-    "sourceMap": true
+    "sourceMap": true,
+    "allowJs": true,
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "aws-exports.js"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

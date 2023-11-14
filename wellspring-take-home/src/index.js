@@ -10,12 +10,14 @@ import App from './App';
 import HomePage from './page/HomePage';
 import PatientPage from './page/PatientPage';
 import ErrorPage from './page/ErrorPage';
+import AppWrapper from './AppWrapper';
+
 
 // Append to add more pages
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <AppWrapper />,
     errorElement: <ErrorPage />,
     children: [
       {
