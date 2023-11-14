@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wellspring-dev-181906-authRole",
+      "UnauthRoleArn": "arn:aws:iam::144192756145:role/amplify-wellspring-dev-181906-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::144192756145:role/amplify-wellspring-dev-181906-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-wellspring-dev-181906-deployment",
+      "UnauthRoleName": "amplify-wellspring-dev-181906-unauthRole",
+      "StackName": "amplify-wellspring-dev-181906",
+      "StackId": "arn:aws:cloudformation:us-west-2:144192756145:stack/amplify-wellspring-dev-181906/30e68b10-8294-11ee-9c6b-06176061f78d",
+      "AmplifyAppId": "d3jjlg6ekb7hcc"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3jjlg6ekb7hcc",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}
