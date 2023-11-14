@@ -18,6 +18,8 @@ import { mainListItems } from "./listItems";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./page/HomePage";
+import PatientPage from "./page/PatientPage";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/patients",
-    element: <h1>Patient Page Coming Soon</h1>,
+    element: <PatientPage />,
   },
 ]);
 

@@ -1,24 +1,16 @@
-import { Box, Chip, ChipOwnProps, Divider, Typography } from "@mui/material";
+import { Box, Chip, Divider, Typography } from "@mui/material";
 
 // Types
 import { Patient } from "../../types/Patient";
+
+// Utils
+import { getChipColor } from "../../shared/utils/ChipColor";
 
 interface PatientInfoProps {
   patient: Patient;
   useDivider?: boolean;
 }
 
-function getChipColor(status: string): ChipOwnProps["color"] {
-  if (status === "Visit completed") {
-    return "info";
-  } else if (status === "Started training") {
-    return "success";
-  } else if (status === "Missing documentation") {
-    return "warning";
-  } else {
-    return "default";
-  }
-}
 function PatientInfo({ patient, useDivider }: PatientInfoProps) {
   return (
     <>

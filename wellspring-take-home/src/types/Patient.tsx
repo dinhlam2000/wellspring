@@ -3,5 +3,5 @@ export type Patient = {
   patientName: string;
   caregiverName: string;
   visitStatus: string;
-  lastCheckIn: Date;
+  lastCheckIn: Date | string;
 };
