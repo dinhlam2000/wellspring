@@ -174,7 +174,7 @@ export default function App() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Welcome to my project -- Lam Tran
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">

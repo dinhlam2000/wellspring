@@ -6,6 +6,7 @@ import { Appointment } from "../../types/Appointment";
 
 interface VisitInfoProps {
   appointment: Appointment;
+  showDate?: boolean;
 }
 function getTimeColor(appointmentType: string) {
   if (appointmentType === "In-person") {
@@ -14,7 +15,7 @@ function getTimeColor(appointmentType: string) {
     return "primary";
   }
 }
-function VisitInfo({ appointment }: VisitInfoProps) {
+function VisitInfo({ appointment, showDate = false }: VisitInfoProps) {
   return (
     <Card
       sx={{
@@ -61,6 +62,11 @@ function VisitInfo({ appointment }: VisitInfoProps) {
           >
             {appointment.appointmentType}
           </Typography>
+          {showDate && (
+            <Typography variant="h6">
+              {appointment.appointmentDate as unknown as string}
+            </Typography>
+          )}
         </CardContent>
       </Box>
       <Box
