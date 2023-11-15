@@ -44,6 +44,8 @@ This application incorporates secure authentication through AWS Amplify Auth, en
 
 ### HomePage
 
+<img width="960" alt="image" src="./docs/GifyDemoWellSpring.gif">
+
 ### Getting Started
 
 1. Run `npm install` to install the necessary dependencies
