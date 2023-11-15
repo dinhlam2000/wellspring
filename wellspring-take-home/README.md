@@ -1,6 +1,10 @@
 # Wellspring Electronic Health Record System
 
-https://dev.d3jjlg6ekb7hcc.amplifyapp.com/
+# https://dev.d3jjlg6ekb7hcc.amplifyapp.com/
+
+# Demo Video
+
+https://www.youtube.com/watch?v=9kFR0pUBIrw
 
 # Introduction
 
@@ -37,6 +41,8 @@ This application incorporates secure authentication through AWS Amplify Auth, en
 - **Historical Visit Tracking**: Enabling users to access past visit records, providing a comprehensive overview beyond the current day, tomorrow, and this week.
 
 - **Extended Documentation (Readme)**: The addition of more informative pages, including an extended Readme, offering comprehensive insights into the application's functionality and usage.
+
+### HomePage
 
 ### Getting Started
 
