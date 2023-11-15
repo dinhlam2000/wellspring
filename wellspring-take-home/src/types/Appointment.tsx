@@ -4,6 +4,6 @@ export type Appointment = {
   appointmentType: string;
   patientName: string;
   appointmentName: string;
-  appointmentDate: Date;
+  appointmentDate: string;
   appointmentDescription: string;
 };
