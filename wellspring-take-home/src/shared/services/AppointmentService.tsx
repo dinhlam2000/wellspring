@@ -1,6 +1,7 @@
 // Types
 import { Appointment } from "../../types/Appointment";
 
+// eslint-disable-next-line
 const appointments: Array<Appointment> = [
   {
     id: 1,
@@ -43,6 +44,7 @@ const appointments: Array<Appointment> = [
     appointmentDescription: "Annual checkup",
   },
 ];
+
 export async function fetchAppointments(): Promise<Array<Appointment>> {
   // Used for deployment onto << https://dev.d3jjlg6ekb7hcc.amplifyapp.com/ >> since the this web version can't connect to running local server
   // return new Promise((resolve) => {

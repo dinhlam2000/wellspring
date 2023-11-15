@@ -1,5 +1,6 @@
 import { Patient } from "../../types/Patient";
 
+// eslint-disable-next-line
 const patients: Array<Patient> = [
   {
     id: 1,

@@ -18,7 +18,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 // Components
 import NavBar from "./components/Navigations/NavBar";
