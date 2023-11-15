@@ -2,19 +2,41 @@
 
 https://dev.d3jjlg6ekb7hcc.amplifyapp.com/
 
-### Introduction
+# Introduction
 
-At Wellspring, we’re building tools to supercharge our families’ ability to provide care throughout their journey with us. Whether it’s through training or care, we’re here to tackle the bottlenecks that affect our families’ experience.
+Welcome to my implementation of the solution for [WellSpring Take-Home Challenge](https://github.com/abbycare/take-home). This application showcases various features, and I'll provide insights into the code structure and how to run it locally. For a live demonstration, you can test the deployed version on AWS [here](https://dev.d3jjlg6ekb7hcc.amplifyapp.com/).
 
-This project aims to build a front-end web experience for our electronic health record system. The interface will help our clinical team to easily access patient data and track how to best support our families.
+## Description
 
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/24286181/233230581-738175b3-b2aa-4cfe-ad46-f942a743b461.png">
+This application incorporates secure authentication through AWS Amplify Auth, ensuring a seamless and protected user experience. Leveraging TypeScript for enhanced code clarity and Material-UI for polished styling, it offers a user-friendly interface with distinct components.
 
-### Features
+### Features supported
 
 - Side nav panel
 - Recent patients table
 - Upcoming visits table
+
+### Bonus Highlight
+
+- **Authentication Support**: Users can securely log in, log out, create accounts, and verify their accounts via email. AWS Amplify Auth is seamlessly integrated for robust authentication.
+- **ThemeProvider Integration**: Consistent styling across the application is maintained using ThemeProvider, offering a cohesive color palette (primary, secondary, info, warning, success).
+- **PatientPage Navigation**: Access PatientPage through the left-hand Heart Icon or by selecting "View All" on the Recent Patients Table. PatientPage features a simple and sortable Material-UI table.
+- **Responsive Styling**: The application's styling adapts to various screen sizes, ensuring a responsive and user-friendly experience.
+- **Configurable Router**: Utilizing react-router-dom, the app boasts a navigation bar that can be effortlessly extended with new pages for enhanced functionality.
+
+### Future Expansion with Serverless Database Solution (DynamoDB) + AWS Lambda API
+
+- **Scheduling Appointments**: Empowering administrators to efficiently schedule appointments for patients, fostering a streamlined healthcare management process.
+
+- **Patient Information Editing**: Enhanced capabilities on the Patient Page to facilitate the seamless editing of patient information by administrators.
+
+- **Appointment Management**: The ability to cancel upcoming visits or reschedule existing appointments, ensuring flexibility and adaptability to changing circumstances.
+
+- **Notification System**: Implementation of a robust notification system to alert users of any crucial messages or updates, fostering proactive engagement.
+
+- **Historical Visit Tracking**: Enabling users to access past visit records, providing a comprehensive overview beyond the current day, tomorrow, and this week.
+
+- **Extended Documentation (Readme)**: The addition of more informative pages, including an extended Readme, offering comprehensive insights into the application's functionality and usage.
 
 ### Getting Started
 
