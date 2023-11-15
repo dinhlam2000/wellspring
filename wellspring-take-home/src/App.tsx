@@ -14,8 +14,11 @@ import Container from "@mui/material/Container";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 // Components
 import NavBar from "./components/Navigations/NavBar";
@@ -38,6 +41,7 @@ interface AppBarProps extends MuiAppBarProps {
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })<AppBarProps>(({ theme, open }) => ({
+  // backgroundColor: theme.palette.secondary.main,
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -141,15 +145,25 @@ const defaultTheme = createTheme({
 
 function App({ signOut, user }: WithAuthenticatorProps) {
   const [open, setOpen] = React.useState(true);
+  const [anchorElProfile, setAnchorElProfile] =
+    React.useState<null | HTMLElement>(null);
+
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+
+  const handleProfileOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElProfile(event.currentTarget);
+  };
+  const handleProfileClose = () => {
+    setAnchorElProfile(null);
   };
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        <AppBar position="absolute" open={open} color="secondary">
           <Toolbar
             sx={{
               pr: "24px", // keep right padding when drawer closed
@@ -177,12 +191,40 @@ function App({ signOut, user }: WithAuthenticatorProps) {
               Welcome to this project -- {user?.username}
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={4} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <h1>Hello {user?.username}</h1>
-            <button onClick={signOut}>Sign out</button>
+            <div>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleProfileOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElProfile}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElProfile)}
+                onClose={handleProfileClose}
+              >
+                <MenuItem onClick={handleProfileClose}>Profile</MenuItem>
+                <MenuItem onClick={signOut}>Sign out</MenuItem>
+              </Menu>
+            </div>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -194,6 +236,15 @@ function App({ signOut, user }: WithAuthenticatorProps) {
               px: [1],
             }}
           >
+            <Box
+              component="img"
+              sx={{
+                height: 35,
+                width: 20,
+              }}
+              alt="The house from the offer."
+              src="/assets/WellSpringLogo.png"
+            />
             <IconButton onClick={toggleDrawer}>
               <Typography
                 variant="h6"

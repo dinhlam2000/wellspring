@@ -15,7 +15,7 @@ export default function AppWrapper() {
       const inputPassword: HTMLInputElement | undefined =
         document.querySelector('input[name="password"]') as HTMLInputElement;
       if (inputPassword) {
-        inputPassword.value = "123456789";
+        inputPassword.value = "wellspring";
       }
     }, 500);
     return () => clearTimeout(intervalID);
