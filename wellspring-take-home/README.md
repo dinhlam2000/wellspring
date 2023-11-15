@@ -6,6 +6,10 @@
 
 https://www.youtube.com/watch?v=9kFR0pUBIrw
 
+### DEMO GIF
+
+<img width="960" alt="image" src="./docs/GifyDemoWellSpring.gif">
+
 # Introduction
 
 Welcome to my implementation of the solution for [WellSpring Take-Home Challenge](https://github.com/abbycare/take-home). This application showcases various features, and I'll provide insights into the code structure and how to run it locally. For a live demonstration, you can test the deployed version on AWS [here](https://dev.d3jjlg6ekb7hcc.amplifyapp.com/).
@@ -41,10 +45,6 @@ This application incorporates secure authentication through AWS Amplify Auth, en
 - **Historical Visit Tracking**: Enabling users to access past visit records, providing a comprehensive overview beyond the current day, tomorrow, and this week.
 
 - **Extended Documentation (Readme)**: The addition of more informative pages, including an extended Readme, offering comprehensive insights into the application's functionality and usage.
-
-### HomePage
-
-<img width="960" alt="image" src="./docs/GifyDemoWellSpring.gif">
 
 ### Getting Started
 
